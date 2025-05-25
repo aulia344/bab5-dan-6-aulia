@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Belanja</title>
+</head>
+<body>
+    <div>
+        Barang :
+        <select id="listbarang">
+            <option value="Buku" selected>Buku</option>
+            <option value="Tas" selected>Tas</option>
+            <option value="Pensil" selected>Pensil</option>
+            <option value="Penghapus" selected>Penghapus</option>
+        </select>
+        <button id="tambah" onclick="cek_barang()">(+)</button>
+    </div>
+    <div>
+        Jumlah :
+        <input type="text" id="Jumlah">
+    </div>
+    <div id="barang"></div>
+    <div id="total"></div>
+</body>
+</html>
+
+
+<script>
+  var harga;
+  var namaBarang;
+  var keterangan = "";
+  var jumlah;
+  var total = 0;
+  var subtotal = 0;
+
+  function cekBarang() {
+    var nama = document.getElementById("listbarang").value;
+    switch (nama) {
+      case 'Buku':
+        harga = 10000;
+        namaBarang = "Buku";
+        break;
+      case 'Tas':
+        harga = 50000;
+        namaBarang = "Tas";
+        break;
+      case 'Pensil':
+        harga = 5000;
+        namaBarang = "Pensil";
+        break;
+      case 'Penghapus':
+        harga = 15000;
+        namaBarang = "Penghapus";
+        break;
+    }
+    jumlah = parseInt(document.getElementById("jumlah").value);
+    subtotal = jumlah * harga;
+    total +  subtotal;
+
+    ket= nama_barang + ":" + harga + ":"+ jumlah + "=" +subtotal+ "<br>";
+    document.getElementById("barang").innerHTML =ket;
+    document.getElementById("total").innerHTML = "Total Belanja =" + total;
+  }
+</script>

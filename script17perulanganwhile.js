@@ -1,0 +1,6 @@
+<script>
+  var i = 0;
+  while (i<10){
+    document.write("Nilai i adalah :" +i+ "<br>";i++;
+  }
+</script>
